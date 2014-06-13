@@ -3,16 +3,19 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Jeu de cartes</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<script type="text/javascript" src="Data/Carte.js"></script>
 		<script type="text/javascript" src="Data/EnsembleCarte.js"></script>
 		<script type="text/javascript" src="affiche.js"></script>
 	</head>
 
 	<body>
-		<div id="affiche">Coucou</div>
+		<div id="image"></div>
+		<div id="affiche"></div>
+		<canvas id="canvas" height="800", width="600"></div>
 		<script type="text/javascript">
 			var paquet = new EnsembleCarte();
-			var carte = [new Carte(0), new Carte(1), new Carte(2), new Carte(3)];
+			var carte = [new Carte(0, 'Image/roi.jpg'), new Carte(1, 'Image/roi.jpg'), new Carte(2, 'Image/roi.jpg'), new Carte(3, 'Image/roi.jpg')];
 
 			afficheTexte('Vide', paquet);			
 
@@ -27,6 +30,8 @@
 
 			paquet.enleverCarte(2);
 			afficheTexte('Enlève la dernière carte', paquet);
+
+			afficher(paquet);
 		</script>
 	</body>
 </html>

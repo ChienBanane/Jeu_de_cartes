@@ -8,9 +8,14 @@
 	*/
 	
 //Constructeur
-function Carte(id)
+function Carte(id, img)
 {
 	this.id = id;
+	
+	this.img = img;
+
+	document.getElementById("image").innerHTML += "<img id=\"image" + id + "\" src=\"" + img + "\" />";
+	
 }
 
 
