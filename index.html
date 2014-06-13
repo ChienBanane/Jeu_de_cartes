@@ -3,11 +3,48 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Jeu de cartes</title>
+		<script type="text/javascript" src="Data/Carte.js"></script>
+		<script type="text/javascript" src="Data/EnsembleCarte.js"></script>
 	</head>
 
 	<body>
-		<canvas id="canvas" width="800" height="600">
-			
-		</canvas>
+		<div id="affiche">Coucou</div>
+		<script type="text/javascript">
+			function afficher(texte, ensemble)
+			{
+				sortie = document.getElementById('affiche');
+
+				sortie.innerHTML += texte + ' : [';
+
+				if(ensemble.cartes.length > 0)
+				{
+					sortie.innerHTML += ensemble.cartes[0].id;
+
+					for(i = 1; i < ensemble.cartes.length; i++)
+					{
+						sortie.innerHTML += ' ' + ensemble.cartes[i].id;
+					}
+				}
+	
+				sortie.innerHTML += ']<br \/\><br \/\>';
+			}
+
+			var paquet = new EnsembleCarte();
+			var carte = [new Carte(0), new Carte(1), new Carte(2), new Carte(3)];
+
+			afficher('Vide', paquet);			
+
+			paquet.ajouterCarte(carte[0], 0);
+			afficher('Ajoute une carte', paquet);
+
+			paquet.ajouterCarte(carte[3], 0);
+			afficher('Ajoute une autre carte au debut', paquet);
+
+			paquet.ajouterCarte(carte[2], 1);
+			afficher('Ajoute une autre carte au milieu', paquet);
+
+			paquet.enleverCarte(2);
+			afficher('Enlève la dernière carte', paquet);
+		</script>
 	</body>
 </html>
