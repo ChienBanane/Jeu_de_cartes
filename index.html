@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Jeu de cartes</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script>
 		<script type="text/javascript" src="Data/Carte.js"></script>
 		<script type="text/javascript" src="Data/EnsembleCarte.js"></script>
 		<script type="text/javascript" src="affiche.js"></script>
@@ -11,27 +12,40 @@
 
 	<body>
 		<div id="image"></div>
+		<a href="#" onclick="test();">Ici </a>
 		<div id="affiche"></div>
 		<canvas id="canvas" height="800", width="600"></div>
 		<script type="text/javascript">
 			var paquet = new EnsembleCarte();
-			var carte = [new Carte(0, 'Image/roi.jpg'), new Carte(1, 'Image/roi.jpg'), new Carte(2, 'Image/roi.jpg'), new Carte(3, 'Image/roi.jpg')];
+			var carte = {};
 
-			afficheTexte('Vide', paquet);			
+			$.getJSON("Regles/regle.json", function(data){
+									for(i = 0; i < data.Cartes.length; i++)
+									{
+										c = data.Cartes[i]
+										carte[c["id"]] = new Carte(c["id"], c["img"]);
+									}
+								});
 
-			paquet.ajouterCarte(carte[0], 0);
-			afficheTexte('Ajoute une carte', paquet);
+			function test()
+			{
+				afficheTexte('Vide', paquet);			
 
-			paquet.ajouterCarte(carte[3], 0);
-			afficheTexte('Ajoute une autre carte au debut', paquet);
+				paquet.ajouterCarte(carte[0], 0);
+				afficheTexte('Ajoute une carte', paquet);
 
-			paquet.ajouterCarte(carte[2], 1);
-			afficheTexte('Ajoute une autre carte au milieu', paquet);
+				paquet.ajouterCarte(carte[3], 0);
+				afficheTexte('Ajoute une autre carte au debut', paquet);
 
-			paquet.enleverCarte(2);
-			afficheTexte('Enlève la dernière carte', paquet);
+				paquet.ajouterCarte(carte[2], 1);
+				afficheTexte('Ajoute une autre carte au milieu', paquet);
 
-			afficher(paquet);
+				paquet.enleverCarte(2);
+				afficheTexte('Enlève la dernière carte', paquet);
+
+				afficher(paquet);
+			}
+
 		</script>
 	</body>
 </html>
