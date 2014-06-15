@@ -2,26 +2,184 @@
 	"Cartes" : [
 		{
 			"id" : 0,
-			"valeur" : 0,
-			"img" : "Image/roi.jpg"
+			"valeur" : 1,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau01.gif"
 	  	},
 
 		{
 			"id" : 1,
-			"valeur" : 5,
-			"img" : "Image/roi.jpg"
+			"valeur" : 2,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau02.gif"
 	  	},
 
 		{
 			"id" : 2,
-			"valeur" : 10,
-			"img" : "Image/roi.jpg"
+			"valeur" : 3,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau03.gif"
 	  	},
 
 		{
 			"id" : 3,
-			"valeur" : 20,
-			"img" : "Image/roi.jpg"
+			"valeur" : 4,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau04.gif"
+	  	},
+
+		{
+			"id" : 4,
+			"valeur" : 5,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau05.gif"
+	  	},
+
+		{
+			"id" : 5,
+			"valeur" : 6,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau06.gif"
+	  	},
+
+		{
+			"id" : 6,
+			"valeur" : 7,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau07.gif"
+	  	},
+
+		{
+			"id" : 7,
+			"valeur" : 8,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau08.gif"
+	  	},
+
+		{
+			"id" : 8,
+			"valeur" : 9,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau09.gif"
+	  	},
+
+		{
+			"id" : 9,
+			"valeur" : 10,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau10.gif"
+	  	},
+
+		{
+			"id" : 10,
+			"valeur" : 11,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau11.gif"
+	  	},
+
+		{
+			"id" : 11,
+			"valeur" : 12,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau12.gif"
+	  	},
+
+		{
+			"id" : 12,
+			"valeur" : 13,
+			"couleur" : "carreau",
+			"img" : "Image/cartes/carreau13.gif"
+	  	},
+
+		{
+			"id" : 13,
+			"valeur" : 1,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur01.gif"
+	  	},
+
+		{
+			"id" : 14,
+			"valeur" : 2,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur02.gif"
+	  	},
+
+		{
+			"id" : 15,
+			"valeur" : 3,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur03.gif"
+	  	},
+
+		{
+			"id" : 16,
+			"valeur" : 4,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur04.gif"
+	  	},
+
+		{
+			"id" : 17,
+			"valeur" : 5,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur05.gif"
+	  	},
+
+		{
+			"id" : 18,
+			"valeur" : 6,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur06.gif"
+	  	},
+
+		{
+			"id" : 19,
+			"valeur" : 7,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur07.gif"
+	  	},
+
+		{
+			"id" : 20,
+			"valeur" : 8,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur08.gif"
+	  	},
+
+		{
+			"id" : 21,
+			"valeur" : 9,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur09.gif"
+	  	},
+
+		{
+			"id" : 22,
+			"valeur" : 10,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur10.gif"
+	  	},
+
+		{
+			"id" : 23,
+			"valeur" : 11,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur11.gif"
+	  	},
+
+		{
+			"id" : 24,
+			"valeur" : 12,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur12.gif"
+	  	},
+
+		{
+			"id" : 25,
+			"valeur" : 13,
+			"couleur" : "coeur",
+			"img" : "Image/cartes/coeur13.gif"
 	  	}
 	]
 }
