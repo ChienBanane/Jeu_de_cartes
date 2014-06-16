@@ -16,32 +16,34 @@
 		<div id="affiche"></div>
 		<canvas id="canvas" height="800", width="600"></div>
 		<script type="text/javascript">
-			var paquet = new EnsembleCarte();
-			var carte = {};
+			var paquetComplet = new EnsembleCarte();
 
 			$.getJSON("Regles/regle.json", function(data){
 									for(i = 0; i < data.Cartes.length; i++)
 									{
 										c = data.Cartes[i]
-										carte[c["id"]] = new Carte(c["id"], c["img"]);
+										paquetComplet.ajouterCarte(new Carte(c["id"], c["img"]), paquetComplet.cartes.length);
 									}
 								});
 
+			var paquet = new EnsembleCarte();
+			var poubelle = new EnsembleCarte();
+
 			function test()
 			{
-				afficheTexte('Vide', paquet);			
+				afficheTexte('Debut', paquet);			
 
-				paquet.ajouterCarte(carte[0], 0);
-				afficheTexte('Ajoute une carte', paquet);
+				paquet.ajouterCarte(paquetComplet.enleverCarte(0), 0);
+				//afficheTexte('Ajoute une carte', paquet);
 
-				paquet.ajouterCarte(carte[3], 0);
-				afficheTexte('Ajoute une autre carte au debut', paquet);
+				paquet.ajouterCarte(paquetComplet.enleverCarte(0), 0);
+				//afficheTexte('Ajoute une autre carte au debut', paquet);
 
-				paquet.ajouterCarte(carte[2], 1);
-				afficheTexte('Ajoute une autre carte au milieu', paquet);
+				paquet.ajouterCarte(paquetComplet.enleverCarte(0), 1);
+				//afficheTexte('Ajoute une autre carte au milieu', paquet);
 
-				paquet.enleverCarte(2);
-				afficheTexte('Enlève la dernière carte', paquet);
+				poubelle.ajouterCarte(paquet.enleverCarte(2), 0);
+				afficheTexte('Fin', paquet);
 
 				afficher(paquet);
 			}
