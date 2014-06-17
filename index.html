@@ -16,6 +16,7 @@
 		<div id="affiche"></div>
 		<canvas id="canvas" height="800", width="600"></div>
 		<script type="text/javascript">
+			var ctx = document.getElementById('canvas').getContext("2d");
 			var paquetComplet = new EnsembleCarte();
 
 			$.getJSON("Regles/regle.json", function(data){
@@ -26,12 +27,12 @@
 									}
 								});
 
-			var paquet = new EnsembleCarte();
-			var poubelle = new EnsembleCarte();
+			var paquet = new EnsembleCarte({"x" : 10, "y" : 10});
+			var poubelle = new EnsembleCarte({"x" : 10, "y" : 160});
 
 			function test()
 			{
-				afficheTexte('Debut', paquet);			
+				//afficheTexte('Debut', paquet);			
 
 				paquet.ajouterCarte(paquetComplet.enleverCarte(0), 0);
 				//afficheTexte('Ajoute une carte', paquet);
@@ -43,9 +44,10 @@
 				//afficheTexte('Ajoute une autre carte au milieu', paquet);
 
 				poubelle.ajouterCarte(paquet.enleverCarte(2), 0);
-				afficheTexte('Fin', paquet);
+				//afficheTexte('Fin', paquet);
 
-				afficher(paquet);
+				paquet.afficher(ctx);
+				poubelle.afficher(ctx);
 			}
 
 		</script>

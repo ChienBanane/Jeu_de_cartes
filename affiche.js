@@ -16,13 +16,3 @@ function afficheTexte(texte, ensemble)
 
 	sortie.innerHTML += ']<br \/\><br \/\>';
 }
-
-function afficher(ensemble)
-{
-	var ctx = document.getElementById('canvas').getContext("2d");
-	for(i = 0; i < ensemble.cartes.length; i++)
-	{
-		img = document.getElementById('image' + ensemble.cartes[i].id);
-		ctx.drawImage(img, 10 + 20*i, 10, img.width, img.height);
-	}
-}
