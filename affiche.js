@@ -16,3 +16,11 @@ function afficheTexte(texte, ensemble)
 
 	sortie.innerHTML += ']<br \/\><br \/\>';
 }
+
+function afficheAll()
+{
+	for(p in paquets)
+	{
+		paquets[p].afficher(ctx);
+	}
+}

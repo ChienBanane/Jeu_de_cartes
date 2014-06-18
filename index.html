@@ -18,36 +18,39 @@
 		<script type="text/javascript">
 			var ctx = document.getElementById('canvas').getContext("2d");
 			var paquetComplet = new EnsembleCarte();
+			var paquets = {}
 
 			$.getJSON("Regles/regle.json", function(data){
 									for(i = 0; i < data.Cartes.length; i++)
 									{
-										c = data.Cartes[i]
+										c = data.Cartes[i];
 										paquetComplet.ajouterCarte(new Carte(c["id"], c["img"]), paquetComplet.cartes.length);
 									}
-								});
 
-			var paquet = new EnsembleCarte({"x" : 10, "y" : 10});
-			var poubelle = new EnsembleCarte({"x" : 10, "y" : 160});
+									for(i=0; i < data.Ensemble.length; i++)
+									{
+										p = data.Ensemble[i];
+										paquets[p["nom"]] = new EnsembleCarte(p["position"]);
+									}
+								});
 
 			function test()
 			{
 				//afficheTexte('Debut', paquet);			
 
-				paquet.ajouterCarte(paquetComplet.enleverCarte(0), 0);
+				paquets["paquet"].ajouterCarte(paquetComplet.enleverCarte(0), 0);
 				//afficheTexte('Ajoute une carte', paquet);
 
-				paquet.ajouterCarte(paquetComplet.enleverCarte(0), 0);
+				paquets["paquet"].ajouterCarte(paquetComplet.enleverCarte(0), 0);
 				//afficheTexte('Ajoute une autre carte au debut', paquet);
 
-				paquet.ajouterCarte(paquetComplet.enleverCarte(0), 1);
+				paquets["paquet"].ajouterCarte(paquetComplet.enleverCarte(0), 1);
 				//afficheTexte('Ajoute une autre carte au milieu', paquet);
 
-				poubelle.ajouterCarte(paquet.enleverCarte(2), 0);
+				paquets["poubelle"].ajouterCarte(paquets["paquet"].enleverCarte(2), 0);
 				//afficheTexte('Fin', paquet);
 
-				paquet.afficher(ctx);
-				poubelle.afficher(ctx);
+				afficheAll();
 			}
 
 		</script>

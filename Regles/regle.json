@@ -181,5 +181,17 @@
 			"couleur" : "coeur",
 			"img" : "Image/cartes/coeur13.gif"
 	  	}
+	],
+
+	"Ensemble" : [
+		{
+			"nom" : "paquet",
+			"position" : {"x" : 10, "y" : 10}
+		},
+
+		{
+			"nom" : "poubelle",
+			"position" : {"x" : 10, "y" : 160}
+		}
 	]
 }
